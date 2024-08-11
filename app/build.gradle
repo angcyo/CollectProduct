@@ -2,7 +2,17 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
 }
+
+ext {
+    APP_NAME = "CollectProduct"
+    //collectProduct.gradle
+    //可用参数: #an:app名字; #vn:版本名; #t:当天日期; #fn:风味名; #bn:编译类型名;
+    //         #sn:使用的签名名称; #ka:使用的签名别名;
+    apkName = "#an-#vn_#fn_#bn_#ka"
+}
+
 apply from: './collectProduct.gradle'
+//apply from: 'https://raw.githubusercontent.com/angcyo/CollectProduct/master/app/collectProduct.gradle'
 
 android {
     namespace 'com.angcyo.collect.product'

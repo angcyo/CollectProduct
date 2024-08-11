@@ -6,6 +6,7 @@
  * - usage.txt
  * - seeds.txt
  * - R.txt
+ * - configuration.txt
  * */
 
 println "当前Gradle版本->" + gradle.gradleVersion + " 用户目录:" + gradle.gradleUserHomeDir + " 主目录:" + gradle.gradleHomeDir
@@ -13,7 +14,7 @@ println "当前Gradle版本->" + gradle.gradleVersion + " 用户目录:" + gradl
 def output = project.hasProperty("apk_path") ? project.ext.apk_path : ".apk"
 
 //APK输出文件名配置:(不包含扩展名)
-//可用参数: #an:app名字; #vn:版本名; #d:当天日期yyyy-MM-dd; #t:当天时间yyyy-MM-dd_HH-mm; #fn:风味名; #bn:编译类型名;
+//可用参数: #an:app名字; #vn:版本名APP_NAME; #d:当天日期yyyy-MM-dd; #t:当天时间yyyy-MM-dd_HH-mm; #fn:风味名; #bn:编译类型名;
 //         #sn:使用的签名名称; #ka:使用的签名别名;
 
 def apkFormatName = project.hasProperty("apkName") ? project.ext.apkName : "#an-#vn_#d_#fn_#bn_#ka"
